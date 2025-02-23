@@ -5,6 +5,31 @@ import {ProfileContext} from '../context/ProfileContext';
 
 const ProfileScreen = () => {
   const {loading, error, profileData} = useContext(ProfileContext);
+
+  if (loading) {
+    return (
+      <View style={styles.centered}>
+        <Text style={{color: 'white'}}>Loading...</Text>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.centered}>
+        <Text style={{color: 'red'}}>Error: {error}</Text>
+      </View>
+    );
+  }
+
+  if (!profileData) {
+    return (
+      <View style={styles.centered}>
+        <Text style={{color: 'white'}}>Profile data not available.</Text>
+      </View>
+    );
+  }
+
   return (
     <LinearGradient colors={['#000000', '#1A1A1A']} style={{flex: 1}}>
       <View
@@ -14,18 +39,26 @@ const ProfileScreen = () => {
           alignItems: 'center',
           gap: 3,
         }}>
-        <Image style={styles.headerImg} source={{uri: profileData.image_url}} />
+        <Image
+          style={styles.headerImg}
+          source={{
+            uri: profileData.image_url || 'https://via.placeholder.com/70',
+          }}
+        />
         <View>
-          <Text style={styles.headerNameText}>{profileData.name}</Text>
+          <Text style={styles.headerNameText}>
+            {profileData.name || 'No Name'}
+          </Text>
           <Text style={styles.headerCountText}>
-            {profileData.followers_count} followers
+            {profileData.followers_count ?? 0} followers
           </Text>
         </View>
       </View>
+
       <Text style={styles.yourPlaylistText}>Your Playlist</Text>
 
       <ScrollView>
-        {profileData.public_playlists.map(song => (
+        {profileData.public_playlists?.map(song => (
           <View
             style={{
               marginTop: 8,
@@ -41,9 +74,9 @@ const ProfileScreen = () => {
               source={{uri: 'https://picsum.photos/200'}}
             />
             <View>
-              <Text style={styles.songName}>{song.name}</Text>
+              <Text style={styles.songName}>{song.name || 'Unknown'}</Text>
               <Text style={styles.songCount}>
-                {song.followers_count} followers
+                {song.followers_count ?? 0} followers
               </Text>
             </View>
           </View>
@@ -87,5 +120,10 @@ const styles = StyleSheet.create({
   songCount: {
     color: 'gray',
     fontSize: 18,
+  },
+  centered: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
