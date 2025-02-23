@@ -1,3 +1,4 @@
+````markdown
 # 🎵 Spotify Clone App
 
 A **React Native** mobile application that mimics the core features of Spotify. This app allows users to discover and play music, view song details, and enjoy a smooth user experience with modern UI elements.
@@ -16,27 +17,24 @@ A **React Native** mobile application that mimics the core features of Spotify. 
 
 ## 🛠️ Libraries Used
 
-### **🔄 Navigation:**
+- **Navigation & Screens:**
 
-- [`@react-navigation/native`](https://reactnavigation.org/)
-- [`@react-navigation/native-stack`](https://reactnavigation.org/docs/native-stack-navigator/)
-- [`@react-navigation/bottom-tabs`](https://reactnavigation.org/docs/bottom-tab-navigator/)
+  - `react-navigation`, `native-stack`, `bottom-tabs` – For app navigation and page transitions
 
-### **🎨 UI and Styling:**
+- **UI & Styling:**
 
-- [`react-native-linear-gradient`](https://github.com/react-native-linear-gradient/react-native-linear-gradient)
-- [`react-native-vector-icons`](https://github.com/oblador/react-native-vector-icons)
+  - `react-native-linear-gradient` – For smooth gradient backgrounds
+  - `react-native-vector-icons` – For custom icons
 
-### **🌐 API and Data:**
+- **API & Data Handling:**
 
-- [`axios`](https://axios-http.com/)
-- [`lodash`](https://lodash.com/)
-- [`@rapidapi`](https://rapidapi.com/)
+  - `axios` – For API requests
+  - `lodash` – For K-M rounding and data manipulation
+  - `rapidapi` – For Spotify API integration
 
-### **🎵 Music Player:**
-
-- [`react-native-track-player`](https://react-native-track-player.js.org/)
-- [`react-native-modal`](https://github.com/react-native-modal/react-native-modal)
+- **Music Player:**
+  - `react-native-track-player` – For playing music
+  - `react-native-modal` – For displaying modals
 
 ---
 
@@ -47,4 +45,76 @@ A **React Native** mobile application that mimics the core features of Spotify. 
 ```bash
 git clone https://github.com/YourUsername/spotifyCloneApp.git
 cd spotifyCloneApp
+```
+````
+
+2. **Install dependencies:**
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Run the app:**
+
+```bash
+# Android
+npx react-native run-android
+
+# iOS
+npx react-native run-ios
+```
+
+---
+
+## 🌍 Environment Variables
+
+Create a `.env` file and add your API key:
+
+```env
+RAPIDAPI_KEY=your-api-key
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 🇹🇷 **Türkçe Açıklama**
+
+### 🎵 Spotify Clone App
+
+React Native ile geliştirilen bu mobil uygulama, Spotify'ın temel özelliklerini sunar:
+
+- 🎼 Müzik listeleri ve şarkı detayları
+- 🔊 Entegre müzik çalar
+- 🌈 Renk geçiş efektleri
+- 🔍 Şarkı ve sanatçı arama
+
+### 🛠️ Kullanılan Kütüphaneler
+
+- **Navigasyon:** `react-navigation`, `native-stack`, `bottom-tabs`
+- **UI:** `linear-gradient` (renk geçişi), `vector-icons` (ikonlar)
+- **API:** `axios` (istekler), `lodash` (K-M rounding), `rapidapi` (Spotify verisi)
+- **Müzik Çalar:** `track-player`, `modal`
+
+### 📦 Kurulum
+
+```bash
+git clone https://github.com/YourUsername/spotifyCloneApp.git
+cd spotifyCloneApp
+npm install
+npx react-native run-android
+```
+
+---
+
+💡 Daha fazla bilgi için İngilizce açıklamaya göz atabilirsiniz! 😊
+
+```
+
 ```
